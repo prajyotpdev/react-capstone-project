@@ -9,10 +9,10 @@ import LoginPage from '../pages/login/loginPage';
 import UserProfilePage from '../pages/user/userProfilePage';
 import LoadingPage from '../pages/loading/loadingPage';
 import HomePage from '../pages/home/homePage';
+import DashBoardPage from '../pages/dashboard/dashBoardPage';
 
 
 const RouteManager = () => {
-
   
      const { currentUser } = useContext(AuthContext)
      const navigate = useNavigate();
@@ -20,7 +20,7 @@ const RouteManager = () => {
    
      useEffect(() => {
        if (currentUser) {
-         navigate('/react-capstone-project/user')
+         navigate('/react-capstone-project/dashboard')
        }
      }, [currentUser])
      
@@ -45,14 +45,14 @@ const RouteManager = () => {
    
      return (      
      <Routes>
-      <Route path="/" element={isLoading ?(
+      <Route path="/react-capstone-project/" element={isLoading ?(
        <LoadingPage/>):(<HomePage/>)}/>
       <Route path="/react-capstone-project/register" element={<RegisterationPage/>}/>
       <Route path="/react-capstone-project/login" element={<LoginPage/>}/>
       {/* <Route path="/react-capstone-project/profiles/:profileId" element={<Portfolio/>} ></Route> */}
-      <Route path="/react-capstone-project/user" element={
+      <Route path="/react-capstone-project/dashboard" element={
       <RequireAuth>
-       <UserProfilePage/>
+       <DashBoardPage/>
       </RequireAuth>}/>   
       <Route path="/react-capstone-project/home" element={isLoading && !currentUser ?(
        <LoadingPage/>):currentUser?(<UserProfilePage/>):(<HomePage/>)}/>

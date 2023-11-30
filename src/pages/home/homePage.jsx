@@ -7,11 +7,11 @@ const HomePage = () => {
   const navigate = useNavigate()
 
   const LoginUser = () => {
-    navigate('/rotract-club-thane/login')
+    navigate('/react-capstone-project/login')
   }
 
   const RegisterUser = () => {
-    navigate('/rotract-club-thane/register')
+    navigate('/react-capstone-project/register')
   }
 
   return (

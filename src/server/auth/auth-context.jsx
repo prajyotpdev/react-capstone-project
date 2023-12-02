@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   const signOut = () => {
     SignOutUser()
     setCurrentUser(null)
-    navigate('/react-capstone-project/')
+    navigate('/')
   }
 
   const value = {

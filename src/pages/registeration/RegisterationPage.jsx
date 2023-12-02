@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { createUser } from '../../server/services/Firebase'
+import { createUser, db } from '../../server/services/Firebase'
+import { AuthContext } from '../../server/auth/auth-context'
+import { doc, setDoc } from 'firebase/firestore'
 
 const defaultFormFields = {
   email: '',
   password: '',
   confirmpassword: '',
   conditionsAccepted: 'False',
+  fname :'',
+  username :'',
+  phonenumber :'',
 }
 
 
@@ -14,9 +19,10 @@ const RegisterationPage = () => {
   
   const [formFields, setFormFields] = useState(defaultFormFields)
   const [conditionsAcceptedState, setconditionsAcceptedState] = useState('False')
-  const { email, password , confirmpassword, conditionsAccepted} = formFields
+  const { email, password , confirmpassword, conditionsAccepted, fname, username, phonenumber} = formFields
   const navigate = useNavigate()
 
+  const { currentUserId } = useContext(AuthContext);
   
   const resetFormFields = () => {
     return (
@@ -27,16 +33,29 @@ const RegisterationPage = () => {
   
   const handleSubmit = async (event) => {
     event.preventDefault()
+    
 
+    const target = event.target;
+    
+    const data = {
+      fname: target.fname.value,
+      username: target.username.value,
+      phonenumber: target.phonenumber.value,
+  };         
+  
+  console.log(data);   
     try {
-
+      const userRef = doc(db, "users", currentUserId??"null");  
+      await setDoc(userRef,data);
+      console.log('Document written with ID:', userRef.id);
       if(password===confirmpassword && conditionsAccepted==='False' ){        
-      const userCredential = await createUser(email, password)    
-        
+      const userCredential = await createUser(email, password)    ;        
       if (userCredential) {
         resetFormFields()
         navigate('/react-capstone-project/dashboard')
       }
+
+
       }
       else{
         console.log("Password does not match");
@@ -54,7 +73,7 @@ const RegisterationPage = () => {
   }
   
   const handlecheckBoxChange = (event) => {
-    if(conditionsAcceptedState==='True'){      
+    if(conditionsAcceptedState==='True'){ 
     setconditionsAcceptedState('False');
     }else{      
     setconditionsAcceptedState('True');
@@ -74,11 +93,44 @@ const RegisterationPage = () => {
             <form onSubmit={handleSubmit}>
               <div>
                 <input
+                  type="text"
+                  name="fname"
+                  value={fname}
+                  id="fname"
+                  onChange={handleChange}
+                  placeholder="First Name"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="username"
+                  value={username}
+                  id="username"
+                  onChange={handleChange}
+                  placeholder="UserName"
+                  required
+                />
+              </div>
+              <div>
+                <input
                   type="email"
                   name="email"
                   value={email}
                   onChange={handleChange}
                   placeholder="Email"
+                  required
+                />
+              </div>              
+              <div>
+                <input
+                type="number"
+                  name="phonenumber"
+                  value={phonenumber}
+                  id="phonenumber"
+                  onChange={handleChange}
+                  placeholder="Phonenumber"
                   required
                 />
               </div>

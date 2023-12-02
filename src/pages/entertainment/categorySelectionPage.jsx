@@ -1,89 +1,91 @@
+import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { createUser, db } from '../../server/services/Firebase'
+import { AuthContext } from '../../server/auth/auth-context'
+import { doc, setDoc } from 'firebase/firestore'
+import { Grid, ListItem } from '@mui/material'
 
-const LoginPage = () => {
+
+const CategorySelectionPage = () => {
   
-     const [formFields, setFormFields] = useState(defaultFormFields)
-     const { email, password } = formFields
-     const navigate = useNavigate()
-   
-     var errorUserMessage = "Invalid Username"
-     var errorPassMessage = "Invalid Password"
-   
-     
-     const handleSubmit = async (event) => {
-       event.preventDefault()
-   
-       try {
-         const userCredential = await signInUser(email, password)
-   
-         if (userCredential) {
-           resetFormFields()
-           navigate('/react-capstone-project/dashboard')
-         }
-       } catch (error) {
-         console.log('User Sign In Failed', error.message);
-       }
-     };
-     
-     const handleChange = (event) => {
-       const { name, value } = event.target
-       setFormFields({...formFields, [name]: value })
-     }
-   
-   
-     
-     const resetFormFields = () => {
-       return (
-         setFormFields(defaultFormFields)
-       );
-     }
-   
-     return (
-       <>
-       <div >             
-       <NavBar  />   
-       <div > 
-       <div >      
-             </div>
-             <div >
-               {/* <div className={classNamesLogin.logo}>
-                 <a href="https://reactjs.org" target="_blank">
-                   <img src={ClubLogoWhite} className="logo react" alt="React logo" />
-                 </a>
-               </div> */}
-               <div >
-               <form onSubmit={handleSubmit}>
-               <h1 >Sign In Form</h1>
-                 <div>
-                   <input
-                     type="email"
-                     name="email"
-                     value={email}
-                     onChange={handleChange}
-                     placeholder="Email"
-                     required
-                   />              
-                   <span>{errorUserMessage}</span>
-                 </div>
-                 <div>
-                   <input
-                     type='password'
-                     name='password'
-                     value={password}
-                     onChange={handleChange}
-                     placeholder="Password"
-                     required
-                   />
-                   <span>{errorPassMessage}</span>
-                 </div>
-                   <div >
-                   <button id='recaptcha' type="submit">Submit</button>
-                 </div>          
-               </form>
-               </div>
-             </div></div>
-        
-           </div>
-       
-       </>
-     )
+  const [categories, setCategory] = useState([])
+  const navigate = useNavigate()
+
+  const { currentUserId } = useContext(AuthContext);
+  
+  
+  const handleSubmit = async (event) => {
+    event.preventDefault();   
+
+    const target = event.target;
+    
+    const data = {
+     categories
+  };         
+  
+  console.log(data);   
+    try {
+      const userRef = doc(db, "users", currentUserId??"null");  
+      data.categories.length==0?
+      console.log("No Categories Selected"): await setDoc(userRef,data) ;
+      console.log('Document written with ID:', userRef.id);  
+      setCategory([]);
+      navigate('/react-capstone-project/dashboard')      
+    } catch (error) {
+      console.log('Categories writing at database Failed', error.message);
+    }
+    
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setCategory({...categories, [name]: value })
+  }
+  
+  
+  const handlecheckBoxChange = (event) => {
+     const value  = event.target.value;
+     // category.join(',value')
+     const updatedCategory = categories;
+
+     if (!updatedCategory.includes(value)) {
+          updatedCategory.push(value);
+        } else {
+          updatedCategory.pop(value);
+        }
+
+     setCategory(updatedCategory);
+     console.log(updatedCategory+ " This is current Categoriees");
    }
+
+   const categoriesArray = ['Thriller', 'Suspense', 'Psychological'];
+
+  return (
+    <>
+    <div>Select Category Screen</div> 
+    <div className="App">
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+               {Array.from(categoriesArray).map((item, index) => (
+               <Grid item xs={2} sm={4} md={4} key={index}>
+                    <ListItem>
+                    <input type="checkbox" id="javascript" name="fav_language"  value={item} onClick={handlecheckBoxChange}/>
+                    {item}
+                    </ListItem>
+               </Grid>
+          ))}
+          </Grid>
+          <div className="card">
+            <form onSubmit={handleSubmit}>               
+              <div>
+                <input id='recaptcha' type="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+    
+    </>
+  )
+}
+
+
+export default CategorySelectionPage

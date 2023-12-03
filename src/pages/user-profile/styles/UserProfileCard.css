@@ -1,0 +1,17 @@
+
+.UserProfilePictureDiv{
+     border-radius: 25px;
+     border: 2px solid black;
+     background-color: aqua;
+     align-items: center;
+     justify-items: center;
+     height: 100%;
+     width:  30%;  
+}
+
+.UserProfilePictureDiv img{  
+     height: 100%;   
+     width: 100%;   
+     border-radius: 25px;
+  object-fit: cover;
+}

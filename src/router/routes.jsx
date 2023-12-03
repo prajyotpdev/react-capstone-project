@@ -6,15 +6,13 @@ import { AuthContext } from '../server/auth/auth-context';
 import RequireAuth  from '../server/auth/require-auth';
 import RegisterationPage from '../pages/registeration/RegisterationPage';
 import LoginPage from '../pages/login/loginPage';
-import UserProfilePage from '../pages/user/userProfilePage';
 import LoadingPage from '../pages/loading/loadingPage';
 import HomePage from '../pages/home/homePage';
 import DashBoardPage from '../pages/dashboard/dashBoardPage';
 import CategorySelectionPage from '../pages/entertainment/categorySelectionPage';
 
 
-const RouteManager = () => {
-  
+const RouteManager = () => {  
      const { currentUser } = useContext(AuthContext)
      const navigate = useNavigate();
      console.log('User:', !!currentUser);
@@ -49,7 +47,7 @@ const RouteManager = () => {
        <DashBoardPage/>
       </RequireAuth>}/>   
       <Route path="/react-capstone-project/home" element={isLoading && !currentUser ?(
-       <LoadingPage/>):currentUser?(<UserProfilePage/>):(<HomePage/>)}/>
+       <LoadingPage/>):currentUser?(<DashBoardPage/>):(<HomePage/>)}/>
       </Routes>
      )
    }

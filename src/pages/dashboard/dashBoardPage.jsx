@@ -4,7 +4,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import NavBar from '../../components/navbar';
 import axios from 'axios';
 import UserProfileCard from '../user-profile/user/UserProfileCard';
-import WeatherCard from './components/weatherCard';
+import WeatherCard from './components/weather/weatherCard';
+import TimerCard from './components/timer/timerCard';
+import NotePadCard from './components/notepad/pad';
 
 const DashBoardPage = () => {
   
@@ -37,6 +39,8 @@ const DashBoardPage = () => {
     <button onClick={retrieveMovies}>Get Movies</button>  
     <UserProfileCard categoryList={categoriesList??categories} email={currentUser.currentUser?.email} username={currentUser?.email}/>
     <WeatherCard/>
+    <TimerCard/>
+    <NotePadCard/>
     <h3>Welcome! {currentUser?.email}</h3>
       <p>Sign In Status: {currentUser && 'active'}</p>  
     </div>

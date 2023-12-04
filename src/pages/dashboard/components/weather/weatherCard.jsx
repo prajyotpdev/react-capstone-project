@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/WeatherCard.css';
+import '../../styles/WeatherCard.css';
 import axios from 'axios';
 import CloudIcon from '@mui/icons-material/Cloud';
 import { DataObject } from '@mui/icons-material';

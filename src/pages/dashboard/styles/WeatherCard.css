@@ -1,0 +1,47 @@
+
+.timestampheader{     
+border-radius: 33px  33px 0px 0px;
+background-color: #FF4ADE;
+margin: 0px;
+width:100%;
+height: 30%;
+font-size: 55px ;
+display: flex;
+align-content: space-between;
+justify-content: space-around;
+flex-direction: row;
+}
+
+.weatherloghero{     
+width:100%;
+height: 30%;
+font-size: 55px ;
+display: flex;
+align-content: space-between;
+justify-content: space-around;
+flex-direction: row;
+}
+
+
+.weatherlogchild{
+     text-align: center;
+     font-size: 30px;
+     display: flex;
+     flex-direction: column;
+}
+
+.windcomponent{     
+     font-size: 30px;
+     display: flex;
+     flex-direction: column;
+}
+
+
+.rainAttributes{
+     font-size: 40px;
+}
+
+.temperaturecomponent{     
+     display: flex;
+     flex-direction: column;
+}

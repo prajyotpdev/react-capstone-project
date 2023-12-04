@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../server/auth/auth-context'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NavBar from '../../components/navbar';
 import axios from 'axios';
 import UserProfileCard from '../user-profile/user/UserProfileCard';
+import WeatherCard from './components/weatherCard';
 
 const DashBoardPage = () => {
   
@@ -12,6 +13,10 @@ const DashBoardPage = () => {
   function chooseCategory(){    
     navigate('/react-capstone-project/choose');
   }
+  
+  const location = useLocation();
+
+  const categoriesList = location.state;
 
   const [movies, setMovies] = useState([]);
 
@@ -20,6 +25,9 @@ const DashBoardPage = () => {
     setMovies(movies.data.adult);
     console.log({movies});
   };
+  
+  const categories = ['Category 1', 'Category 2', 'Category 3'];
+
 
   return (
     <div>             
@@ -27,7 +35,8 @@ const DashBoardPage = () => {
     <button onClick={signOut}>Sign Out</button>
     <button onClick={chooseCategory}>Choose Category Screen </button>
     <button onClick={retrieveMovies}>Get Movies</button>  
-    <UserProfileCard/>
+    <UserProfileCard categoryList={categoriesList??categories} email={currentUser.currentUser?.email} username={currentUser?.email}/>
+    <WeatherCard/>
     <h3>Welcome! {currentUser?.email}</h3>
       <p>Sign In Status: {currentUser && 'active'}</p>  
     </div>

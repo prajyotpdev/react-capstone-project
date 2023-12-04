@@ -30,7 +30,7 @@ const CategorySelectionPage = () => {
       console.log("No Categories Selected"): await setDoc(userRef,data) ;
       console.log('Document written with ID:', userRef.id);  
       setCategory([]);
-      navigate('/react-capstone-project/dashboard')      
+      navigate('/react-capstone-project/dashboard',{ state: categories })      
     } catch (error) {
       console.log('Categories writing at database Failed', error.message);
     }

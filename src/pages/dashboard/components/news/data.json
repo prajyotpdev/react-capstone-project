@@ -1,0 +1,32 @@
+{
+     "status": "ok",
+     "totalResults": 12349,
+     "articles": [
+         {
+             "source": {
+                 "id": null,
+                 "name": "Noticiasautomotivas.com.br"
+             },
+             "author": "Ricardo de Oliveira",
+             "title": "Novo Tesla Roadster: mais de 1.000 pagaram por um carro que ainda não existe",
+             "description": "Você pagaria o preço integral por um carro que ainda não existe? Bom, pelo menos no mercado, onde deveria chegar entre 2020 e 2021... Esse é o caso do Novo",
+             "url": "https://www.noticiasautomotivas.com.br/novo-tesla-roadster-mais-de-1-000-pagaram-por-um-carro-que-ainda-nao-existe/",
+             "urlToImage": "https://images.noticiasautomotivas.com.br/img/f/2020-tesla-roadster.jpg",
+             "publishedAt": "2023-12-04T14:00:33Z",
+             "content": "2020 tesla roadster\r\nVocê pagaria o preço integral por um carro que ainda não existe? Bom, pelo menos no mercado, onde deveria chegar entre 2020 e 2021 Esse é o caso do Novo Tesla Roadster, que por o… [+1810 chars]"
+         },
+         {
+             "source": {
+                 "id": null,
+                 "name": "Forbes"
+             },
+             "author": "Trefis Team, Contributor, \n Trefis Team, Contributor\n https://www.forbes.com/sites/greatspeculations/people/trefis/",
+             "title": "Following A Lackluster Cybertruck Debut, Is Tesla Stock Overvalued At $240?",
+             "description": "Tesla commenced deliveries of its new Cybertruck on Thursday after almost two years of production delays amidst supply chain issues and technical complications.",
+             "url": "https://www.forbes.com/sites/greatspeculations/2023/12/04/following-a-lackluster-cybertruck-debut-is-tesla-stock-overvalued-at-240/",
+             "urlToImage": "https://imageio.forbes.com/specials-images/imageserve/656d4a7c29574720c4b44fe4/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+             "publishedAt": "2023-12-04T14:00:00Z",
+             "content": "People walk past a Tesla booth during the China International Supply Chain Expo (CISCE) in Beijing ... [+] on December 1, 2023. (Photo by JADE GAO / AFP) (Photo by JADE GAO/AFP via Getty Images)\r\nAFP… [+5075 chars]"
+         }
+     ]
+     }

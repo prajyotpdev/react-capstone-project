@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from "react-query";
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from '../src/server/auth/auth-context'
+import { store } from './server/redux/store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -16,9 +18,10 @@ root.render(
 <React.StrictMode>      
   <BrowserRouter>  
   <AuthProvider>    
+    <Provider store={store}>
   <QueryClientProvider client={queryClient}>
   <App />
-  </QueryClientProvider>
+  </QueryClientProvider></Provider>
   </AuthProvider>
     </BrowserRouter>
 </React.StrictMode>

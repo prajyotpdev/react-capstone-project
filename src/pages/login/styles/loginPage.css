@@ -1,0 +1,29 @@
+.hero{
+     display: flex;
+     width: 100vw;
+     height: 100vh;
+     flex-wrap: wrap;
+}
+
+.lefthero{     
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     width: 50%;
+}
+.lefthero img{
+     height: 100%;
+     object-fit: cover;
+}
+.righthero{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 50%;
+}
+
+.formstyle{
+     align-items: center;
+     align-content: center;
+     text-align: center;
+}

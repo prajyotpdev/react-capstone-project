@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { signInUser } from '../../server/services/Firebase'
 import NavBar from '../../components/navbar'
+import './styles/loginPage.css'
+import Logo from '../../components/Logo'
 
 const defaultFormFields = {
   email: '',
@@ -11,6 +13,7 @@ const defaultFormFields = {
 const LoginPage = () => {
   
   const [formFields, setFormFields] = useState(defaultFormFields)
+  const [error, seterror] = useState(false)
   const { email, password } = formFields
   const navigate = useNavigate()
 
@@ -29,6 +32,7 @@ const LoginPage = () => {
         navigate('/react-capstone-project/dashboard')
       }
     } catch (error) {
+      seterror(true);
       console.log('User Sign In Failed', error.message);
     }
   };
@@ -47,21 +51,15 @@ const LoginPage = () => {
   }
 
   return (
-    <>
-    <div >             
-    <NavBar  />   
-    <div > 
-    <div >      
-          </div>
-          <div >
-            {/* <div className={classNamesLogin.logo}>
-              <a href="https://reactjs.org" target="_blank">
-                <img src={ClubLogoWhite} className="logo react" alt="React logo" />
-              </a>
-            </div> */}
-            <div >
-            <form onSubmit={handleSubmit}>
-            <h1 >Sign In Form</h1>
+    <>     
+    <div className='hero'> 
+    <div className='lefthero'>
+      <img src={"https://images.pexels.com/photos/12262184/pexels-photo-12262184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="" /> 
+      </div>
+    <div className="righthero"> 
+    <Logo/>
+            <form onSubmit={handleSubmit} className='formstyle' >
+            <h1 >Sign in</h1>
               <div>
                 <input
                   type="email"
@@ -71,7 +69,7 @@ const LoginPage = () => {
                   placeholder="Email"
                   required
                 />              
-                <span>{errorUserMessage}</span>
+                {error?<span>{errorUserMessage}</span>:null}
               </div>
               <div>
                 <input
@@ -82,16 +80,16 @@ const LoginPage = () => {
                   placeholder="Password"
                   required
                 />
-                <span>{errorPassMessage}</span>
+                
+                {error?<span>{errorPassMessage}</span>:null}
               </div>
                 <div >
                 <button id='recaptcha' type="submit">Submit</button>
               </div>          
             </form>
-            </div>
-          </div></div>
+    </div>
+          </div>
      
-        </div>
     
     </>
   )

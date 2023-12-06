@@ -3,10 +3,13 @@ import { AuthContext } from '../../server/auth/auth-context'
 import { useLocation, useNavigate } from 'react-router-dom';
 import NavBar from '../../components/navbar';
 import axios from 'axios';
+import './styles/DashBoardPage.css';
+
 import UserProfileCard from '../user-profile/user/UserProfileCard';
 import WeatherCard from './components/weather/weatherCard';
 import TimerCard from './components/timer/timerCard';
-import NotePadCard from './components/notepad/pad';
+import NotePadCard from './components/notepad/NotePad';
+import NewsCard from './components/news/NewsCard';
 
 const DashBoardPage = () => {
   
@@ -14,6 +17,10 @@ const DashBoardPage = () => {
   const navigate = useNavigate();
   function chooseCategory(){    
     navigate('/react-capstone-project/choose');
+  }
+
+  function gotoCollection(){    
+    navigate('/react-capstone-project/collection');
   }
   
   const location = useLocation();
@@ -41,8 +48,8 @@ const DashBoardPage = () => {
     <WeatherCard/>
     <TimerCard/>
     <NotePadCard/>
-    <h3>Welcome! {currentUser?.email}</h3>
-      <p>Sign In Status: {currentUser && 'active'}</p>  
+    <NewsCard/>
+    <button className="browsebtn" onClick={gotoCollection}>Browse</button>
     </div>
   )
 }

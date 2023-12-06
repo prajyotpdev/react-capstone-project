@@ -1,0 +1,13 @@
+.browsebtn{
+     width: 179px;
+     height: 50.12px;
+     flex-shrink: 0;   
+     background-color: #148A08;
+     color: white;
+     border-radius: 34px;
+     text-align: center;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 92.2%; 
+     letter-spacing: 0.471px;
+}

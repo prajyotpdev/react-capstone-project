@@ -131,8 +131,9 @@ const updateProgressBar = (value) => {
   return (
     <div className='timercard'>
 <div style={{ width: 200, height: 200, margin:10 }}>
-  <CircularProgressbar value={dashoffset} text={`${remainingTime.hours}:${remainingTime.minutes}:${remainingTime.seconds}`} styles={
-     buildStyles({pathColor: `rgba(255, 106, 106)`,
+  <CircularProgressbar value={dashoffset} text={`${remainingTime.hours.toString().padStart(1, '0')}:${remainingTime.minutes.toString().padStart(2, '0')}:${remainingTime.seconds.toString().padStart(2, '0')}`} styles={
+     buildStyles({
+      pathColor: `rgba(255, 106, 106)`,
      textColor: '#ffffff',
      trailColor: 'null',
      backgroundColor: '#FF6A6A',})

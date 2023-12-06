@@ -1,0 +1,28 @@
+.logo{
+     position: static;
+color: #72DB73;
+font-family: Single Day;
+font-size: 47.333px;
+font-style: normal;
+margin-left: 1em;
+margin-top: 1em;
+font-weight: 400;
+line-height: 139.688%
+}
+
+.quote{
+color: #FFF;
+margin-left: 2em;
+margin-top: 2em;
+font-family: Roboto;
+font-size: 30.424px;
+font-style: normal;
+font-weight: 600;
+}
+
+.movieslist{
+     display: flex;
+     flex-direction: row;
+     margin-top: 1%;
+     margin-bottom: 2%;
+}

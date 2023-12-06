@@ -1,0 +1,32 @@
+.notepadcontainer{
+     display: flex;
+     flex-direction: column;
+}
+
+.noteTitle{
+     color: black;
+     font-family: Roboto;
+     font-size: 38px;
+     font-weight: 600;
+     line-height: 40px;
+     letter-spacing: 0.02em;
+     text-align: left;
+     margin-left: 10%;
+     margin-top: 10%;
+}
+
+textarea:focus, input:focus{
+     outline: none;
+ }
+
+.noteDescription{
+     color: black;
+     font-family: Roboto;
+     font-size: 21px;
+     font-weight: 600;
+     line-height: 40px;
+     letter-spacing: 0.02em;
+     text-align: left;
+     margin-left: 10%;
+     margin-top: 5%;
+}

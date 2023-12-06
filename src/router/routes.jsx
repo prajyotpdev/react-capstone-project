@@ -10,6 +10,7 @@ import LoadingPage from '../pages/loading/loadingPage';
 import HomePage from '../pages/home/homePage';
 import DashBoardPage from '../pages/dashboard/dashBoardPage';
 import CategorySelectionPage from '../pages/entertainment/categorySelectionPage';
+import CollectionPage from '../pages/collectionPage/collectionPage';
 
 
 const RouteManager = () => {  
@@ -41,6 +42,7 @@ const RouteManager = () => {
       <Route path="/react-capstone-project/register" element={<RegisterationPage/>}/>
       <Route path="/react-capstone-project/login" element={<LoginPage/>}/>
       <Route path="/react-capstone-project/choose" element={<CategorySelectionPage/>}/>
+      <Route path="/react-capstone-project/collection" element={<CollectionPage/>}/>
       {/* <Route path="/react-capstone-project/profiles/:profileId" element={<Portfolio/>} ></Route> */}
       <Route path="/react-capstone-project/dashboard" element={
       <RequireAuth>

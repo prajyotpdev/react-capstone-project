@@ -14,7 +14,7 @@ function RequireAuth({ children }) {
   if (!currentUser) {
 // Redirect the user to the home page.
     // Please! Close the mustache {{}}
-    return <Navigate to="/" state={ { from: location } } replace />;
+    return <Navigate to="/react-capstone-project" state={ { from: location } } replace />;
   }
   else{                    
   const userRef = doc(db, "users", currentUser?.uid);  

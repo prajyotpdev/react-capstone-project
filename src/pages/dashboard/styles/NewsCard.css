@@ -39,13 +39,14 @@
    }
 
    .descriptiondiv{     
-     word-wrap: break-word;
      color: black;
+     width: 80%;
      font-size: 19px;
      font-weight: 400;
      margin: 40px;
      text-align: left;
-     white-space: break-word;
+     word-wrap: break-word;
      overflow: hidden;
-     text-overflow: ellipsis;
+     box-sizing: content-box;
+     max-lines: 3;
    }

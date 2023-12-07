@@ -54,8 +54,8 @@ setNote(html);
   return (
   <>   
     <div style={NotePadCardStyle} className='notepadcontainer'>
-      <div contenteditable='true' className='noteTitle' onMouseLeave={saveTitle}>{title}</div>
-      <div className="noteDescription" contenteditable="true" onMouseLeave={saveNote}></div>
+      <div contenteditable='true' className='noteTitle' onMouseLeave={saveTitle} placeholder="Title" ></div>
+      <div className="noteDescription" contenteditable="true" onMouseLeave={saveNote} placeholder="Note"></div>
       {/* <btn className="noteDescription" onClick={save}>save</btn> */}
     </div>
   </>

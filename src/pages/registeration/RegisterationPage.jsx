@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { createUser, db } from '../../server/services/Firebase'
 import { AuthContext } from '../../server/auth/auth-context'
 import { doc, setDoc } from 'firebase/firestore'
+import './styles/RegistrationPage.css'
+import Logo from '../../components/Logo'
 
 const defaultFormFields = {
   email: '',
@@ -45,12 +47,14 @@ const RegisterationPage = () => {
   
   console.log(data);   
     try {
-      const userRef = doc(db, "users", currentUserId??"null");  
-      await setDoc(userRef,data);
-      console.log('Document written with ID:', userRef.id);
       if(password===confirmpassword && conditionsAccepted==='False' ){        
       const userCredential = await createUser(email, password)    ;        
       if (userCredential) {
+      // const userRef = doc(db, "users", currentUserId??"null");  
+      // await setDoc(userRef,data); 
+      const newUser = {fname,username,phonenumber};
+      await setDoc(doc(db, "users", userCredential.user.uid),newUser,{ merge: true });
+      // console.log('Document written with ID:', userRef.id);
         resetFormFields()
         navigate('/react-capstone-project/dashboard')
       }
@@ -86,11 +90,17 @@ const RegisterationPage = () => {
 
 
   return (
-    <>
-    <div>Signup Page</div>
-    <div className="App">
-          <div className="card">
-            <form onSubmit={handleSubmit}>
+    
+    <>     
+    <div className='hero'> 
+    <div className='lefthero'>
+      <img src={"https://images.pexels.com/photos/12262184/pexels-photo-12262184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="" /> 
+      <div className="leftdivtext">Discover new things on Superapp</div>
+      </div>
+    <div className="righthero"> 
+    <Logo/>
+    <div className="pagetitle">Create your new account</div>
+            <form onSubmit={handleSubmit} className='formstyle'>
               <div>
                 <input
                   type="text"
@@ -154,17 +164,20 @@ const RegisterationPage = () => {
                   required
                 />
               </div>
-              <div className="field checkbox">
+              <div className="field_checkbox">
           <input type="checkbox" id="conditionsAccepted" 
                   onChange={handlecheckBoxChange} />
-          <label htmlFor="conditionsAccepted">I agree to the terms and conditions</label>
+          <label htmlFor="conditionsAccepted">Share my registration data with Superapp</label>
         </div>
               <div>
-                <input id='recaptcha' type="submit" />
-              </div>
-            </form>
+               <button id='recaptcha' type="submit">SIGN UP</button> 
+              </div>              
+            <div className="privacypolicy">By clicking on Sign up. you agree to Superapp <a href=''>Terms and Conditions of Use</a><br/><br/>
+            To learn more about how Superapp collects, uses, shares and protects your personal data please head Superapp <a href=''>Privacy Policy</a></div>
+   
+            </form> </div>
           </div>
-        </div>
+     
     
     </>
   )

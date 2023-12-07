@@ -79,12 +79,12 @@ const LoginPage = () => {
                   onChange={handleChange}
                   placeholder="Password"
                   required
-                />
-                
+                />                
                 {error?<span>{errorPassMessage}</span>:null}
               </div>
                 <div >
-                <button id='recaptcha' type="submit">Submit</button>
+               <div className="buttondiv">
+               <button id='recaptcha' type="submit">LOGIN</button></div> 
               </div>          
             </form>
     </div>

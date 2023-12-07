@@ -12,7 +12,7 @@ const NewsCard = () => {
      const NewsCardStyle = {
           borderRadius: "33px",
           background: "white",
-          alignItems: "start",
+          alignItems: "flexstart",
           justifyContent: "start",
           width: "463px",
           height: "907px",

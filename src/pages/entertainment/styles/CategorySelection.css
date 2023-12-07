@@ -1,0 +1,67 @@
+.hero{
+     display: flex;
+     width: 100vw;
+     height: 100vh;
+     flex-wrap: wrap;
+     overflow: hidden;
+}
+
+.lefthero{     
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     width: 50%;
+}
+
+.lefthero img{
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
+}
+.righthero{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 50%;
+}
+
+.logodiv{
+     width: 100%;
+     margin: 0;
+}
+
+.formstyle{
+     align-items: center;
+     align-content: center;
+     text-align: center;
+     margin-top: 50px;
+}
+
+.choosetext{
+     color: #FFF;
+font-family: Roboto;
+font-size: 68px;
+font-style: normal;
+font-weight: 700;
+margin-left: 100px;
+margin-top: 0px;
+width: 554px;
+height: 316px;
+text-align: left;
+flex-shrink: 0;
+}
+
+
+.righthero button{
+     background-color: #72DB73;
+     border-radius: 28px;
+     color: #FFF;
+     font-family: Roboto;
+     font-size: 29px;
+     width: 100%;
+     height: 55px;
+     font-style: normal;
+     font-weight: 600;
+     margin-top: 40px;
+     margin: 100 auto; 
+}

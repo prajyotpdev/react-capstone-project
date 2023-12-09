@@ -22,6 +22,7 @@ const NewsCard = () => {
           margin: "1em auto auto", 
           overflow: 'hidden' 
       };
+       
       
       function convertDateAndTime(dateString) {
         const dateObj = new Date(dateString);

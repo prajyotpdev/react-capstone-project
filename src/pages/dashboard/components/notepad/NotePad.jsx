@@ -7,8 +7,8 @@ const baseUrl = 'https://reqres.in';
 
 const NotePadCard = () => {
      
-const [ title, setTitle ] = useState("Your Title Goes Here");
-const [ note, setNote ] = useState("Your Note Goes Here");
+const [ title, setTitle ] = useState("");
+const [ note, setNote ] = useState("");
 
 const NotePadCardStyle = {
   borderRadius: "19px",
@@ -20,7 +20,7 @@ const NotePadCardStyle = {
   textAlign: "center",   
   display: "flex", 
   flexDirection: "column",
-  margin: "1em auto auto", overflow: 'hidden' 
+  margin: "1em auto auto", overflow: 'auto' 
 };
 
 function newnameset (){

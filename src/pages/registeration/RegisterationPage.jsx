@@ -99,7 +99,7 @@ const RegisterationPage = () => {
     <>     
     <div className='hero'> 
     <div className='lefthero'>
-      <img src={"https://images.pexels.com/photos/12262184/pexels-photo-12262184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="" /> 
+      <img src={"https://images.pexels.com/photos/12262184/pexels-photo-12262184.jpeg"} alt="" /> 
       <div className="text_overlay">Discover new things on Superapp</div>
       </div>
     <div className="righthero"> 
@@ -181,7 +181,8 @@ const RegisterationPage = () => {
             <div className="privacypolicy">By clicking on Sign up. you agree to Superapp <a href=''>Terms and Conditions of Use</a><br/><br/>
             To learn more about how Superapp collects, uses, shares and protects your personal data please head Superapp <a href=''>Privacy Policy</a></div>
    
-            </form> </div>
+            </form>
+            </div>
           </div>
      
     

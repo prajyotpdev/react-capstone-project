@@ -1,51 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles/CollectionPage.css';
 import MovieCard from './component/movieCard';
 import styles from "./styles/Data.module.css";
+import movieData from './moviesData.json';
 
 const CollectionPage = () => {
   
-const Categories = ["thriller", "Comedy", "action", "Horror"];
+const Categories = ["Action","Suspense"];
+
   return (
     <div>
-      {/* <div
-    style={{
-      width: "100vw",
-      minHeight: "100vh",
-      background: "black",
-      overflowX: "hidden",
-      maxHeight: "100vh",
-    }}
-  >
-    <img
-      src={Profile}
-      style={{
-        position: "absolute",
-        top: "2vh",
-        right: "3vw",
-        height: "60px",
-        width: "60px",
-      }}
-      alt=""
-    />
-    <p
-      style={{
-        color: "green",
-        fontSize: "3rem",
-        margin: "1vw",
-      }}
-      className={styles.header}
-    >
-      Super app
-    </p>
-    <p style={{ color: "white", fontSize: "2rem", margin: "2vw" }}>
-      Entertainment according to your choice
-    </p>
-    {movies.map((movie) => (
-      <List genre={movie} />
-    ))}
-  </div> */}
-      <p className='quote'>Entertainment according to your choice</p>
+      <p className='title'>Entertainment according to your choice</p>
       <CategoryList categories ={Categories}/>
     </div>
   )
@@ -53,25 +18,37 @@ const Categories = ["thriller", "Comedy", "action", "Horror"];
 
 export default CollectionPage
 
-function MovieList(props) {
-  const movies = props.movies;  
+const MovieList = (props) => {
+  var category = props.category;
   const img_url = 'https://picsum.photos/200';
-  const listItems = movies.map((movie) =>
-  
-  <MovieCard movietitle = {movie} img_url= {img_url} />
-  ); 
-  return (
-    <div className="movieslist">{listItems}
-    </div>
-  );
-}
+
+  const [filteredMoviesURLData, setFilteredMoviesURLData] = useState([]);
+
+  useEffect(() => {
+    // Assuming movieData is imported from your file
+  const filteredMoviesURL = movieData.movies
+  .filter((movie) => movie.genres.includes(category))
+  .map((movie) => movie.image_link);
+
+console.log("This is filteredMoviesURL " + filteredMoviesURL);
+      setFilteredMoviesURLData(filteredMoviesURL ?? [] );
+  }, [category]);
+
+
+  var listItems = filteredMoviesURLData.map((index) => (
+    (filteredMoviesURLData[index]!="undefined")? <MovieCard title = {index} img_url={index} />:null
+  ));
+
+  return <div className="movieslist">{listItems}</div>;
+};
 
 function CategoryList(props) {
   const Movies = [1, 2, 3, 4, 5];
   const categories = props.categories;
   const listItems = categories.map((category) =>
-    <li>{category}
-    <MovieList movies={Movies}/>
+    <li>
+      {category}
+    <MovieList category={category}/>
     </li>
   );
   return (

@@ -18,9 +18,11 @@ const MovieCardStyle = {
 };
 
 
+console.log("this is props.movie"+props.img_url );
   return (
   <>   
     <div style={MovieCardStyle} className='Moviecontainer' >
+      {/* <div>{props.title}</div> */}
     <img src={props.img_url} alt="Logo" />
     </div>
   </>

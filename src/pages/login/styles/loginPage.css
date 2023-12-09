@@ -1,9 +1,8 @@
 .hero{
      display: flex;
      width: 100vw;
-     height: 100vh;
+     height: 100%;
      flex-wrap: wrap;
-     overflow: scroll;
 }
 
 .lefthero{     
@@ -51,7 +50,7 @@
      color: #7C7C7C;
      padding: 10px 14px;
      border: none;
-     width: 100%;
+     width: 80%;
      flex-wrap: nowrap;
      align-items: center;
 }

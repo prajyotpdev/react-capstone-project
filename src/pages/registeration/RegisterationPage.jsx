@@ -87,6 +87,11 @@ const RegisterationPage = () => {
     console.log(conditionsAcceptedState+ " This is current checkbox state");
   }
 
+  
+  const LoginUser = () => {
+    navigate('/react-capstone-project/login')
+  }
+
 
 
   return (
@@ -95,7 +100,7 @@ const RegisterationPage = () => {
     <div className='hero'> 
     <div className='lefthero'>
       <img src={"https://images.pexels.com/photos/12262184/pexels-photo-12262184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="" /> 
-      <div className="leftdivtext">Discover new things on Superapp</div>
+      <div className="text_overlay">Discover new things on Superapp</div>
       </div>
     <div className="righthero"> 
     <Logo/>
@@ -168,8 +173,9 @@ const RegisterationPage = () => {
           <input type="checkbox" id="conditionsAccepted" 
                   onChange={handlecheckBoxChange} />
           <label htmlFor="conditionsAccepted">Share my registration data with Superapp</label>
-        </div>
+        </div> 
               <div>
+                <div className="alreadyuser" onClick={LoginUser}>Already a User? </div>
                <button id='recaptcha' type="submit">SIGN UP</button> 
               </div>              
             <div className="privacypolicy">By clicking on Sign up. you agree to Superapp <a href=''>Terms and Conditions of Use</a><br/><br/>

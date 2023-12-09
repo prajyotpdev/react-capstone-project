@@ -1,12 +1,50 @@
 import React from 'react'
 import './styles/CollectionPage.css';
 import MovieCard from './component/movieCard';
+import styles from "./styles/Data.module.css";
 
 const CollectionPage = () => {
   
 const Categories = ["thriller", "Comedy", "action", "Horror"];
   return (
     <div>
+      {/* <div
+    style={{
+      width: "100vw",
+      minHeight: "100vh",
+      background: "black",
+      overflowX: "hidden",
+      maxHeight: "100vh",
+    }}
+  >
+    <img
+      src={Profile}
+      style={{
+        position: "absolute",
+        top: "2vh",
+        right: "3vw",
+        height: "60px",
+        width: "60px",
+      }}
+      alt=""
+    />
+    <p
+      style={{
+        color: "green",
+        fontSize: "3rem",
+        margin: "1vw",
+      }}
+      className={styles.header}
+    >
+      Super app
+    </p>
+    <p style={{ color: "white", fontSize: "2rem", margin: "2vw" }}>
+      Entertainment according to your choice
+    </p>
+    {movies.map((movie) => (
+      <List genre={movie} />
+    ))}
+  </div> */}
       <p className='quote'>Entertainment according to your choice</p>
       <CategoryList categories ={Categories}/>
     </div>

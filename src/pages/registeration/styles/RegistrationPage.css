@@ -2,8 +2,7 @@
      display: flex;
      width: 100vw;
      height: 100vh;
-     flex-wrap: wrap;
-     overflow: hidden;
+     overflow: scroll;
 }
 
 
@@ -12,7 +11,12 @@
      flex-direction: column;
      height: 100%;
      width: 50%;
+     
+     position: relative;
+     min-height: 55%;
+     background-color: aqua;
 }
+
 .lefthero img{
      height: 100%;
      width: 100%;
@@ -20,15 +24,23 @@
 }
 
 
-.leftdivtext{
-     color: #FFF;
-font-family: Roboto;
-font-size: 55px;
-font-style: normal;
-font-weight: 900; /* 77.928px */
-letter-spacing: 1.1px;
-}
-
+.text_overlay {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 60%;
+     padding: 10px;
+     color: #fff;
+     text-align: left;
+     font-family: Roboto;
+     font-size: 55px;
+     font-style: normal;
+     font-weight: 900;
+     letter-spacing: 1.1px;
+     margin-left: 100px;
+     margin-bottom: 100px;
+ }
+ 
 .righthero{
      display: flex;
      flex-direction: column;
@@ -70,6 +82,16 @@ letter-spacing: 1.1px;
 
 .field_checkbox label{
      margin-left: 20px;
+}
+
+.alreadyuser{
+     
+     color: #7C7C7C;
+     font-family: Roboto;
+     font-size: 18px;
+     font-style: normal;
+     font-weight: 500;
+     margin-top: 20px;
 }
 
 .privacypolicy{

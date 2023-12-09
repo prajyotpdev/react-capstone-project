@@ -77,8 +77,6 @@ const CategorySelectionPage = () => {
           ))}
           </Grid>
     </div>
-          </div>
-          <div className="card">
             <form onSubmit={handleSubmit}>               
               <div>
                 <button id='recaptcha' type="submit" >Next Page</button>

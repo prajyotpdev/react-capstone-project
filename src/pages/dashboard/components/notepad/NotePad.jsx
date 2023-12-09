@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import '../../styles/NotePadCard.css';
 
 
@@ -28,7 +28,7 @@ function newnameset (){
    console.log(note);
 }
 
-var contentEditableElement = document.querySelector('[contenteditable]');
+var contentEditableElement = document.querySelector('.noteTitle');
 var contentEditableElementNote = document.querySelector('.noteDescription');
   
 var localStorageKey = 'contenteditable';

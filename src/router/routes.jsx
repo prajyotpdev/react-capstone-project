@@ -38,7 +38,7 @@ const RouteManager = () => {
      return (      
      <Routes>
       <Route path="/" element={isLoading ?(
-       <LoadingPage/>):(<HomePage/>)}/>
+       <LoadingPage/>):(<RegisterationPage/>)}/>
       <Route path="/react-capstone-project/register" element={<RegisterationPage/>}/>
       <Route path="/react-capstone-project/login" element={<LoginPage/>}/>
       <Route path="/react-capstone-project/choose" element={<CategorySelectionPage/>}/>
@@ -49,7 +49,7 @@ const RouteManager = () => {
        <DashBoardPage/>
       </RequireAuth>}/>   
       <Route path="/react-capstone-project/home" element={isLoading && !currentUser ?(
-       <LoadingPage/>):currentUser?(<DashBoardPage/>):(<HomePage/>)}/>
+       <LoadingPage/>):currentUser?(<DashBoardPage/>):(<RegisterationPage/>)}/>
       </Routes>
      )
    }

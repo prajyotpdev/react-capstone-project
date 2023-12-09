@@ -19,7 +19,8 @@ const NewsCard = () => {
           textAlign: "center",   
           display: "flex", 
           flexDirection: "column",
-          margin: "1em auto auto", overflow: 'hidden' 
+          margin: "1em auto auto", 
+          overflow: 'hidden' 
       };
       
       function convertDateAndTime(dateString) {

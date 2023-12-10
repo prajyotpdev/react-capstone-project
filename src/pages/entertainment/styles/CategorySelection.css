@@ -4,6 +4,15 @@
      height: 100vh;
 }
 
+.errorselection{
+     color: #F00;
+
+     font-family: Roboto;
+     font-size: 25.14px;
+     font-style: normal;
+     font-weight: 400;
+}
+
 .lefthero{     
      display: flex;
      flex-direction: column;
@@ -57,7 +66,7 @@ flex-shrink: 0;
      border-radius: 28px;
      color: #FFF;
      font-family: DM Sans;
-     font-size: 26.286px;
+     font-size: 16.286px;
      width: 200px;
      height: 56px;
      font-style: normal;
@@ -104,6 +113,13 @@ flex-shrink: 0;
      line-height: normal;
    }
 
+   .genre-card img{
+     width: 80%;
+     height: 50%;
+     margin-top: 40%;
+     border-radius: 10px;
+   }
+
    .selected-category-tile{    
      border: 1px solid #ddd;
      border-radius: 31px;
@@ -127,10 +143,9 @@ flex-shrink: 0;
 .selected-category-list{     
      display: flex;
      flex-wrap: wrap;
-     justify-content: start;
-     width: 100%;
-     padding: unset;
-     padding-left: 10%;
+     margin-top: 60px;
+     width: 80%;
+     padding-left: 1%;
 }
 
 .closeicon{

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../server/auth/auth-context";
 import { useLocation, useNavigate } from "react-router-dom";
+import NavBar from "../../components/navbar";
 import axios from "axios";
 import "./styles/DashBoardPage.css";
 
@@ -9,9 +10,8 @@ import WeatherCard from "./components/weather/weatherCard";
 import TimerCard from "./components/timer/timerCard";
 import NotePadCard from "./components/notepad/NotePad";
 import NewsCard from "./components/news/NewsCard";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
-const DashBoardPage = () => {
+const DashBoardPage2 = () => {
   const { currentUser, signOut } = useContext(AuthContext);
   const navigate = useNavigate();
   function chooseCategory() {
@@ -60,12 +60,6 @@ const DashBoardPage = () => {
             username={currentUser?.username}
           />
           <WeatherCard />
-          <NotePadCard />
-          <TimerCard />
-          <button onClick={signOut}>
-            {" "}
-            <ExitToAppIcon sx={{ fontSize: 80 }} />
-          </button>
         </div>
         <div className="column2">
           <NewsCard />
@@ -78,4 +72,4 @@ const DashBoardPage = () => {
   );
 };
 
-export default DashBoardPage;
+export default DashBoardPage2;

@@ -11,8 +11,6 @@ font-weight: 400;
 
 .title{
 color: #FFF;
-margin-left: 2em;
-margin-top: 2em;
 font-family: Roboto;
 font-size: 30.424px;
 font-style: normal;
@@ -24,4 +22,17 @@ font-weight: 600;
      flex-direction: row;
      margin-top: 1%;
      margin-bottom: 2%;
+}
+
+.mylist{
+     width: auto;
+}
+
+.genrename{
+     color: #878787;
+
+font-family: Roboto;
+font-size: 30px;
+font-style: normal;
+font-weight: 500;
 }

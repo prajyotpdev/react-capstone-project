@@ -20,6 +20,7 @@ display: flex;
 align-content: space-between;
 justify-content: space-around;
 flex-direction: row;
+margin-top: 2%;
 }
 
 
@@ -34,6 +35,11 @@ flex-direction: row;
      font-size: 30px;
      display: flex;
      flex-direction: column;
+     font-family: Roboto;
+     font-size: 20.982px;
+     font-style: normal;
+     font-weight: 600;
+     margin: 1em 2rem;
 }
 
 
@@ -44,4 +50,29 @@ flex-direction: row;
 .temperaturecomponent{     
      display: flex;
      flex-direction: column;
+     font-family: Roboto;
+     font-size: 44.462px;
+     font-style: normal;
+     font-weight: 600;
+     margin: 2rem auto;
+}
+
+.pressurecomponent{
+     color: #FFF;
+
+     font-family: Roboto;
+     font-size: 15.982px;
+     font-style: normal;
+     font-weight: 400;
+
+}
+
+.humiditycomponent{     
+     font-size: 30px;
+     display: flex;
+     flex-direction: column;
+     font-family: Roboto;
+     font-size: 20.982px;
+     font-style: normal;
+     font-weight: 600;
 }

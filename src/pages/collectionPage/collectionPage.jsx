@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./styles/CollectionPage.css";
 import MovieCard from "./component/movieCard";
-import styles from "./styles/Data.module.css";
 import movieData from "./moviesData.json";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Logo from "../../components/Logo";
 
 const CollectionPage = () => {
   var Categories = ["Action", "Suspense"];
@@ -11,11 +11,21 @@ const CollectionPage = () => {
   const location = useLocation();
   const categoriesfromprev = location.state;
   Categories = categoriesfromprev;
-  console.log("categories from categoriesfromprev" + categoriesfromprev);
+  console.log("categories from ");
 
   return (
     <div>
-      <p className="title">Entertainment according to your choice</p>
+      <Logo />
+      <p
+        className="title"
+        style={{
+          marginLeft: "60px",
+          height: "120px",
+          width: "",
+        }}
+      >
+        Entertainment according to your choice
+      </p>
       <CategoryList categories={Categories} />
     </div>
   );
@@ -39,7 +49,7 @@ const MovieList = (props) => {
   }, [category]);
 
   var listItems = filteredMoviesURLData.map((index) =>
-    filteredMoviesURLData[index] != "undefined" ? (
+    filteredMoviesURLData[index] !== "undefined" ? (
       <MovieCard title={index} img_url={index} />
     ) : null
   );
@@ -51,10 +61,10 @@ function CategoryList(props) {
   const Movies = [1, 2, 3, 4, 5];
   const categories = props.categories;
   const listItems = categories.map((category) => (
-    <li>
-      {category}
+    <>
+      <div className="genrename">{category}</div>
       <MovieList category={category} />
-    </li>
+    </>
   ));
   return <ul>{listItems}</ul>;
 }

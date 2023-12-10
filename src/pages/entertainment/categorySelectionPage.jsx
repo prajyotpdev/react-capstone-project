@@ -1,16 +1,23 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createUser, db } from "../../server/services/Firebase";
+import { db } from "../../server/services/Firebase";
 import { AuthContext } from "../../server/auth/auth-context";
 import { doc, setDoc } from "firebase/firestore";
-import { Grid, ListItem } from "@mui/material";
 import Logo from "../../components/Logo";
 import CloseIcon from "@mui/icons-material/Close";
+import action from "../../assets/action.png";
+import drama from "../../assets/drama.png";
+import fantasy from "../../assets/fantasy.png";
+import fiction from "../../assets/fiction.png";
+import horror from "../../assets/horror.png";
+import music from "../../assets/music.png";
+import romance from "../../assets/romance.png";
+import thriller from "../../assets/thriller.png";
+import western from "../../assets/western.png";
 import "./styles/CategorySelection.css";
 
 const CategorySelectionPage = () => {
   const [categories, setCategory] = useState([]);
-  var randomColor = "";
   const [categoriesArray, setCategoriesArray] = useState([
     "Action",
     "Drama",
@@ -21,22 +28,39 @@ const CategorySelectionPage = () => {
     "Fantacy",
     "Music",
     "Fiction",
-    "Psychological",
   ]);
   const [selectedCategories, setselectedCategories] = useState([]);
   const navigate = useNavigate();
   const fetch = require("node-fetch");
 
-  const { currentUserId } = useContext(AuthContext);
+  var colors = [
+    "#FF5209",
+    "#D7A4FF",
+    "#11B800",
+    "#902500",
+    "#11B800",
+    "#7358FF",
+    "#FF4ADE",
+    "#E61E32",
+    "#84C2FF",
+  ];
 
-  const divcardcolorstyle = {
-    background: pickColor,
-  };
+  var images = [
+    action,
+    drama,
+    fantasy,
+    fiction,
+    horror,
+    music,
+    romance,
+    thriller,
+    western,
+  ];
+
+  const { currentUserId } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const target = event.target;
 
     const data = {
       selectedCategories,
@@ -45,7 +69,7 @@ const CategorySelectionPage = () => {
     console.log(data);
     try {
       const userRef = doc(db, "users", currentUserId ?? "null");
-      data.selectedCategories.length == 0
+      data.selectedCategories.length === 0
         ? console.log("No Categories Selected")
         : await setDoc(userRef, data, { merge: true });
       console.log("Document written with ID:", userRef.id);
@@ -60,8 +84,6 @@ const CategorySelectionPage = () => {
 
   const handlecheckBoxChange = (category) => {
     const value = category;
-    // category.join(',value')
-    const updatedCategory = categories;
     if (!selectedCategories.includes(value)) {
       setselectedCategories((selectedCategories) => [
         ...selectedCategories,
@@ -73,23 +95,6 @@ const CategorySelectionPage = () => {
       );
     }
   };
-
-  function pickColor() {
-    var colors = [
-      "#FF5209",
-      "#D7A4FF",
-      "#902500",
-      "#11B800",
-      "#7358FF",
-      "#FF4ADE",
-    ];
-
-    var random_color = colors[Math.floor(Math.random() * colors.length)];
-
-    console.log(random_color);
-    randomColor = random_color;
-    return random_color;
-  }
 
   //  useEffect(() => {
   //   const url = 'https://api.themoviedb.org/3/genre/movie/list?language=en';
@@ -107,6 +112,7 @@ const CategorySelectionPage = () => {
   //     // Extract only the names from the genres array
   //     const categoryNames = json.genres.map(category => category.name);
   //     setCategoriesArray(categoryNames);
+
   //   })
   //    },[])
 
@@ -136,17 +142,22 @@ const CategorySelectionPage = () => {
                   </div>
                 ))}
               </div>
+              <div className="errorselection">
+                {selectedCategories.length < 3
+                  ? "Minimum 3 category required"
+                  : ""}
+              </div>
             </div>
           </div>
           <div className="righthero">
             <div className="genre-grid">
-              {categoriesArray.map((category) => (
+              {categoriesArray.map((category, index) => (
                 <div
                   key={category}
                   className="genre-card"
                   id={category}
                   style={{
-                    backgroundColor: pickColor(),
+                    backgroundColor: colors[index],
                     borderColor: selectedCategories.includes(category)
                       ? "#FFFFFF"
                       : "transparent",
@@ -155,6 +166,7 @@ const CategorySelectionPage = () => {
                   onClick={() => handlecheckBoxChange(category)}
                 >
                   <label htmlFor={category}>{category}</label>
+                  <img src={images[index]}></img>
                 </div>
                 // <div key={category} className="genre-card" id ='genre-card' style={divcardcolorstyle}>
                 // <label htmlFor={category}>{category}</label>

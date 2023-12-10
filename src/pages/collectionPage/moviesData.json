@@ -26,15 +26,70 @@
          "image_link": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAGsZQdBUyPIlA4ly_Emn80FXoBErT_c1dopVlS24GJkPpjBHK"
        },
        {
-         "title": "",
-         "genres": ["Suspense", "Romance"],
-         "image_link": ""
+         "title": "Brahmāstra",
+         "genres": ["Fantasy", "Music"],
+         "image_link": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSy7CgiiiiJSr9NXfKARKzxwrqOiEW4e_hTss90U0Gi3CfuYA2-"
        },
        {
-         "title": "Fukrey 3",
-         "genres": ["Suspense", "Romance"],
-         "image_link": ""
-       }
+         "title": "Fantastic Beasts: The Secrets of Dumbledore",
+         "genres": ["Fantasy", "Romance"],
+         "image_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR05Pz4KhR1duYx2RsHeZBYkNlcA9_UDv50BCUcjVguu4loZZA0"
+       },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy","Drama"],
+        "image_link": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQaoW2gxmJFDPtqfC9pGL6Rdist9nH9ntMLV7XR1FXpaQj1VrGT"
+      },       
+       {
+        "title": "Adipurush",
+        "genres": ["Action","Fiction"],
+        "image_link": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQdS0SfR5wav6MlRgYHuTUFLVwp6wuG6iNWdnetOMG5Dy7i9tCy"
+      },       
+       {
+        "title": "The Exorcist: Believer",
+        "genres": ["Fantasy","Horror"],
+        "image_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn3.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcQ-jN_okb0Su9Ciisfv3woa883A6pE_WgBrYaO33MBfNoHQAILv&psig=AOvVaw3C-LU4aGwGo_-fMBJ9Js9g&ust=1702308401704000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOimiKqXhYMDFQAAAAAdAAAAABAE"
+      },       
+       {
+        "title": "1917",
+        "genres": ["Action","Thriller"],
+        "image_link": "https://i.ebayimg.com/images/g/GtEAAOSw1W9eN1cY/s-l1600.jpg"
+      },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy"],
+        "image_link": ""
+      },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy"],
+        "image_link": ""
+      },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy"],
+        "image_link": ""
+      },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy"],
+        "image_link": ""
+      },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy"],
+        "image_link": ""
+      },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy"],
+        "image_link": ""
+      },       
+       {
+        "title": "Barbie",
+        "genres": ["Fantasy"],
+        "image_link": ""
+      }
      ]
    }
    

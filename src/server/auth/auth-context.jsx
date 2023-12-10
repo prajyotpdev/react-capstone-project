@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { SignOutUser,  userStateListener } from "../services/Firebase";
-import { createContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useState, useEffect } from "react";
 
 
 export const AuthContext = createContext({

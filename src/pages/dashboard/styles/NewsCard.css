@@ -12,6 +12,7 @@
 
 .imagediv img{
      height: 100%;
+     width: 463px;
      object-fit: fill;
 }
 
@@ -19,7 +20,7 @@
      position: absolute;
      bottom: 0;
      left: 0;
-     width: 100%;
+     width: 463px;
      background-color: rgba(0, 0, 0, 0.5); /* This creates the transparent black background color */
      padding: 10px;
      color: #fff; 
@@ -29,7 +30,7 @@
    .title{
      font-weight: 500;
      font-size: 32px;
-     width: 30%;
+     width: 100%;
      word-wrap: break-word;
      margin-left: 3%;
    }

@@ -2,6 +2,9 @@
      width: 179px;
      height: 50.12px;
      flex-shrink: 0;   
+     position: fixed;
+     bottom: 8%;
+     right: 10%; 
      background-color: #148A08;
      color: white;
      border-radius: 34px;
@@ -9,4 +12,22 @@
      font-style: normal;
      font-weight: 500;
      letter-spacing: 0.471px;
+}
+
+.dashboard{
+     display: flex;
+     flex-direction: row;
+}
+.column1{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     width: 60%;
+}
+
+.column2{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     width: 40%;
 }

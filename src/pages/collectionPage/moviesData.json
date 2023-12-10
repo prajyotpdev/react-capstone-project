@@ -16,19 +16,24 @@
          "image_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb0niU5_-nJcGruRTitqp6LWLeP5Av8LnPWcJ4eUz8avZ9zpXb"
        },
        {
-         "title": "Movie 3",
-         "genres": ["Comedy"],
-         "image_link": "https://example.com/movie3.jpg"
+         "title": "Killers of the Flower Moon",
+         "genres": ["Drama", "Romance"],
+         "image_link": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRodNgRGPBvnQ2nSLCaHhIC8vID2zmK6ACHdxVEmM2xnK8juD1e"
        },
        {
-         "title": "Movie 4",
-         "genres": ["Sci-Fi"],
-         "image_link": "https://example.com/movie4.jpg"
+         "title": "Fukrey 3",
+         "genres": ["Drama"],
+         "image_link": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAGsZQdBUyPIlA4ly_Emn80FXoBErT_c1dopVlS24GJkPpjBHK"
        },
        {
-         "title": "Movie 5",
-         "genres": ["Horror"],
-         "image_link": "https://example.com/movie5.jpg"
+         "title": "",
+         "genres": ["Suspense", "Romance"],
+         "image_link": ""
+       },
+       {
+         "title": "Fukrey 3",
+         "genres": ["Suspense", "Romance"],
+         "image_link": ""
        }
      ]
    }

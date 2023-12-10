@@ -3,6 +3,12 @@
      flex-direction: column;
 }
 
+.notepadcontainer div{
+     width : 400px;
+}
+
+
+
 .noteTitle{
      color: black;
      font-family: Roboto;
@@ -19,6 +25,7 @@
  }
 
 .noteDescription{
+     
      color: black;
      font-family: Roboto;
      font-size: 21px;
@@ -29,12 +36,13 @@
      margin-top: 5%;
 }
 
-[contenteditable=true]:empty:before{
+[contentEditable=true]:empty:before{
      content: attr(placeholder);
-     border: none;
+     border: salmon;
+
    }
 
-   .testcontenteditable{
+   .testcontentEditable{
      color: white;
      border: none;
    }
